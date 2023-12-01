@@ -154,6 +154,63 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-防火墙部署模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="防火墙部署模式"><a href="#防火墙部署模式" class="headerlink" title="防火墙部署模式"></a>防火墙部署模式</h1><p>​	防火墙能够工作在三种模式下：路由模式、透明模式、混合模式。</p>
+<p>​	如果防火墙以第三层对外连接（接口具有IP 地址），则认为防火墙工作在路由模式下；<br>若防火墙通过第二层对外连接（接口无IP 地址），则防火墙工作在透明模式下；<br>若防火墙同时具有工作在路由模式和透明模式的接口（某些接口具有IP 地址，某些接口无IP 地址），则防火墙工作在混合模式下。<br>     防火墙三种工作模式的简介</p>
+<h2 id="路由模式"><a href="#路由模式" class="headerlink" title="路由模式"></a>路由模式</h2><p>​	当防火墙位于内部网络和外部网络之间时，需要将防火墙与内部网络、外部网络以及DMZ 三个区域相连的接口分别配置成不同网段的IP 地址，重新规划原有的网络拓扑，此时相当于一台路由器。</p>
+<p>​	如下图所示，防火墙的Trust区域接口与公司内部网络相连，Untrust 区域接口与外部网络相连。值得注意的是，Trust 区域接口和Untrust 区域接口分别处于两个不同的子网中。<br> <img src="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image002.gif" alt="IMG_256"><br>     采用路由模式时，可以完成ACL 包过滤、ASPF 动态过滤、NAT 转换等功能。然而，路由模式需要对网络拓扑进行修改（内部网络用户需要更改网关、路由器需要更改路由配置等)，这是一件相当费事的工作，因此在使用该模式时需权衡利弊。</p>
+<h2 id="透明模式"><a href="#透明模式" class="headerlink" title="透明模式"></a>透明模式</h2><p>​	如果防火墙采用透明模式进行工作，则可以避免改变拓扑结构造成的麻烦，此时防火墙对于子网用户和路由器来说是完全透明的。也就是说，用户完全感觉不到防火墙的存在。</p>
+<p>​	采用透明模式时，只需在网络中像放置网桥（bridge）一样插入该防火墙设备即可，无需修改任何已有的配置。与路由模式相同，IP 报文同样经过相关的过滤检查（但是IP 报文中的源或目的地址不会改变），内部网络用户依旧受到防火墙的保护。防火墙透明模式的典型组网方式如下：<br> <img src="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image002.gif" alt="IMG_257"><br>​	 如上图所示，防火墙的Trust 区域接口与公司内部网络相连，Untrust 区域接口与外部网络相连，需要注意的是内部网络和外部网络必须处于同一个子网。</p>
+<h2 id="混合模式"><a href="#混合模式" class="headerlink" title="混合模式"></a>混合模式</h2><p>​	如果防火墙既存在工作在路由模式的接口（接口具有IP 地址），又存在工作在透明模式的接口（接口无IP 地址），则防火墙工作在混合模式下。混合模式主要用于透明模式作双机备份的情况，此时启动VRRP（Virtual Router Redundancy Protocol，虚拟路由冗余协议）功能的接口需要配置IP 地址，其它接口不配置IP地址。</p>
+<p>防火墙混合模式的典型组网方式如下：<br> <img src="file:///C:/Users/ASUS/AppData/Local/Temp/msohtmlclip1/01/clip_image002.gif" alt="IMG_258"><br> 如上图所示，主&#x2F;备 防火墙的Trust 区域接口与公司内部网络相连，Untrust区域接口与外部网络相连，主&#x2F;备防火墙之间通过HUB 或LAN Switch 实现互相连接，并运行VRRP 协议进行备份。需要注意的是内部网络和外部网络必须处于同一个子网。</p>
+<p>防火墙三种模式的工作过程
+ </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/12/01/%E9%98%B2%E7%81%AB%E5%A2%99%E9%83%A8%E7%BD%B2%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-第一篇文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
